@@ -4,7 +4,7 @@ maintainer_email "support@rightscale.com"
 license          "Copyright RightScale, Inc. All rights reserved."
 description      "Installs and configures Chef Client"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "14.0.3"
+version          "14.1.0"
 
 supports "centos"
 supports "redhat"
@@ -17,6 +17,9 @@ recipe "rsc_chef_client::install_client",
 
 recipe "rsc_chef_client::do_client_converge",
   "Allows manual update/re-run of runlist on the Chef Client."
+
+recipe "rsc_chef_client::do_chef_client_run",
+  "Allows manual update/re-run Chef Client using node data from Chef server."
 
 recipe "rsc_chef_client::do_unregister_request",
   "Deletes the node and registered client on the Chef Server."
